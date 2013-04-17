@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Dirrect Fresh Phone App</title>
+        <script src="css/source-sans-pro.js"></script>
+        <link href="css/styles.css" rel="stylesheet">
+        <link href="css/jquery-ui-1.10.2.custom.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="loader-image"  align="center">
+            <img src="img/img2.gif" class="ajax-loader" >
+        </div>
+
+        <div class='search-bar' align="center" id="home-block">
+            <div class='header'>
+                <h1>Login</h1>
+            </div>
+            <br/>
+            <img src="img/logo.gif" class="img-pad" />
+            <p class="error"></p>
+            <form action="#" id="loginForm" method="post" >
+                <input class='username field' type="text" onblur="if(this.value=='') this.value='Enter your email'" onfocus="if(this.value=='Enter your email') this.value=''" value="Enter your email" /><br/><br/>
+                <input type="text" id="placeholder" class="field" value="Enter your password" onFocus="setPass();"/>
+                <input type="password" id="password" class="field" value="" onBlur="checkPass();" style="display: none;"/><br/><br/>
+                <button class='submit button' id="login-bgt" type="submit">Login</button><br/>
+            </form>
+            <br/>
+            <a class="register button" href="javascript:void(0)" >New Register</a><br/><br/>
+        </div>
+
+        <div class='search-bar' align="center" id="registration-block">
+            <div class='header'>
+                <a href='javascript:void(0)' class="button header-button header-button-left" id="back-to-home">Back</a>
+                <h1>New Registration</h1>
+            </div>
+            <div class='details'>
+                <br/>
+                <center>
+                    <p class="error_reg"></p>
+                    <form action="#" id="registrationForm" method="post" >
+                        <input id="name_" class='name field' type="text" onblur="if(this.value=='') this.value='Enter your name'" onfocus="if(this.value=='Enter your name') this.value=''" value="Enter your name" /><br/><br/>
+                        <input id="email_" class='username field' type="text" onblur="if(this.value=='') this.value='Enter your email'" onfocus="if(this.value=='Enter your email') this.value=''" value="Enter your email" /><br/><br/>
+                        <input type="text" id="placeholder2" class="field" value="Enter your password" onFocus="setPass2();"/>
+                        <input type="password" id="password2" class="field" value="" onBlur="checkPass2();" style="display: none;"/><br/><br/>
+                        <input id="date" class='date_of_birth field' type="text" onblur="if(this.value=='') this.value='Enter your date of birth'" onfocus="if(this.value=='Enter your date of birth') this.value=''" value="Enter your date of birth" /><br/><br/>
+                        <select id="gender_" class='gender field'>
+                            <option value="">Please Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select><br/><br/>
+                        <input id="phone_" class='phone field' type="text" onblur="if(this.value=='') this.value='Enter your phone'" onfocus="if(this.value=='Enter your phone') this.value=''" value="Enter your phone" /><br/><br/>
+
+                        <button class='submit button' id="new-regisration" >Complete Registration</button><br/>
+                    </form>
+                </center>
+            </div>
+        </div>
+
+        <div class='search-bar' align="center" id="camera-block">
+            <div class='header'>
+                <h1>Product Snapshot</h1>
+            </div>
+            <br/>
+            <img src="img/logo.gif" class="img-pad" />
+            <br/>
+            <p class="error_cam"></p>
+            <a class="camera" href="#" onclick="captureImage();"><img src="img/camera-icon.png" class="" /></a>
+            <p>Click on the camera icon to take picture.</p>
+        </div>
+
+        <div class='search-bar' align="center" id="product-add">
+            <div class='header'>
+                <a href='javascript:void(0)' class="button header-button header-button-left" id="product-back-btn">Back</a>
+                <h1>Add Product</h1>
+            </div>
+            <br/>
+            <span id="img-holder">
+                <img src="img/logo.gif" width="80" height="50" class="img-pad" />
+            </span>
+            <center>
+                <p class="error_prod"></p>
+                <form action="#" id="productForm" method="post" >
+                    <select id="store_" class='store field'>
+                        <option value="">Please Select Store</option>
+                        <option value="Agora">Agora</option>
+                        <option value="Mena Bazzar">Mena Bazzar</option>
+                        <option value="Shawpno">Shawpno</option>
+                        <option value="Lavender">Lavender</option>
+                        <option value="Dali">Dali</option>
+                        <option value="Dedar">Dedar</option>
+                    </select>
+                    <br/><br/>
+                    <input id="brand_" class='brand field' type="text" onblur="if(this.value=='') this.value='Enter the brand'" onfocus="if(this.value=='Enter the brand') this.value=''" value="Enter the brand" /><br/><br/>
+                    <select id="size_" class='Size field'>
+                        <option value="">Please Select Size</option>
+                        <option value="Grams">Grams</option>
+                        <option value="Liters">Liters</option>
+                        <option value="OZs ">OZs</option>
+                    </select>
+                    <br/><br/>
+                    <input id="price_" class='price field' type="text" onblur="if(this.value=='') this.value='Enter the price'" onfocus="if(this.value=='Enter the price') this.value=''" value="Enter the price" /><br/><br/>
+                    <input id="date_" class='date_of_expire field' type="text" onblur="if(this.value=='') this.value='Enter Expire Date'" onfocus="if(this.value=='Enter Expire Date') this.value=''" value="Enter Expire Date" /><br/><br/>
+                    <input type="hidden" id="cap_image_" value=""/>
+                    <input type="hidden" id="lat_" value=""/>
+                    <input type="hidden" id="lang_" value=""/>
+                    <button class='submit button' type="submit" id="product-add-submit">Add product</button><br/>
+                </form>
+            </center>
+        </div>
+
+        <div class='search-bar' align="center" id="thanks-block" >
+            <div class='header'>
+                <a href='javascript:void(0)' id="thank-back-btn" class="button header-button header-button-left">Back</a>
+                <h1></h1>
+            </div>
+            <br/>
+            <img src="img/logo.gif" class="img-pad" />
+            <h1>Thank You!</h1>
+            <p>To Give us support.</p>
+            <br/>
+        </div>
+
+        <!-- All Script Goes From here -->
+        <script src="phonegap.js"></script>
+        <script src="lib/jquery-1.8.2.min.js"></script>
+        <script src="js/jquery-ui.js"></script> 
+        <script src="js/jquery.jsonp-2.1.4.min.js"></script>
+        <script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+    </body>
+</html>
